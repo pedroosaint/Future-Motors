@@ -1,20 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Judson&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Haettenschweiler;
+    font-family: 'judson', serif;
 }
 body{
-    background-color: rgb(82, 82, 85);
+    background-color: #d3d3d3;
     color: aliceblue;
 }
 header{
-    background-color: rgb(12, 12, 85);
+    background-color: #0D1227;
+    background: linear-gradient(90deg, #0D1227 30%, #25627E 73%);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:  20px;
     box-shadow: 0.5px 2px 5px 1px rgb(13, 13, 99);
+    border-radius: 5px;
+    border: solid 1px rgb(55, 55, 241);
 }
 nav ul {
     display: flex;
@@ -29,11 +33,10 @@ nav ul li a{
     text-decoration: none;
 }
 nav ul li a:hover{
-    text-transform: uppercase;
     text-shadow: 
-    0   0  10px rgb(55, 55, 241),
-    0   0  15px rgb(55, 55, 241),
-    0   0  25px rgb(55, 55, 241),
-    0   0  50px rgb(55, 55, 241);
+    0   0  10px #03186d,
+    0   0  15px #03186d,
+    0   0  25px #03186d,
+    0   0  50px #03186d;
     transform: scale(1.1);
 }
