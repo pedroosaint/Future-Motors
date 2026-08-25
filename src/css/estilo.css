@@ -9,19 +9,25 @@ body{
     background-color: #d3d3d3;
     color: aliceblue;
 }
-header{
-    background-color: #0D1227;
+header {
     background: linear-gradient(90deg, #0D1227 30%, #25627E 73%);
+    height: 90px;
+    padding: 5px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:  20px;
     box-shadow: 0.5px 2px 5px 1px rgb(13, 13, 99);
     border-radius: 5px;
     border: solid 1px rgb(55, 55, 241);
+    overflow: hidden;
 }
 
-
+header img {
+    width: 180px;
+    height: 85px;
+    object-fit: contain;
+    display: block;
+}
 
 nav ul {
     display: flex;
