@@ -1,42 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Judson&display=swap');
-*{
+
+:root {
+    --bg-color: #d3d3d3;
+    --text-color: #FFFFFF;
+
+    --bg-primary: #0D1227;
+    --bg-secondary: #25627E;
+
+    --border-color: #25627E;
+    --border-radius: 5px;
+
+    --shadow-color: rgba(13, 18, 39, 0.5);
+    --glow-color: rgba(37, 98, 126, 0.8);
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'judson', serif;
+    font-family: 'Judson', serif;
 }
-body{
-    background-color: #d3d3d3;
-    color: aliceblue;
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
-header{
-    background-color: #0D1227;
-    background: linear-gradient(90deg, #0D1227 30%, #25627E 73%);
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:  20px;
-    box-shadow: 0.5px 2px 5px 1px rgb(13, 13, 99);
-    border-radius: 5px;
-    border: solid 1px rgb(55, 55, 241);
+    padding: 20px;
+    background: linear-gradient(
+        90deg,
+        var(--bg-primary) 30%,
+        var(--bg-secondary) 73%
+    );
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0.5px 2px 5px 1px var(--shadow-color);
 }
+
 nav ul {
     display: flex;
     list-style: none;
 }
-nav ul li{
-    padding:0 15px;
+
+nav ul li {
+    padding: 0 15px;
     font-size: 23px;
 }
-nav ul li a{
-    color: rgb(254, 253, 255);
+
+nav ul li a {
+    color: var(--text-color);
     text-decoration: none;
+    transition: text-shadow 0.2s ease;
 }
-nav ul li a:hover{
-    text-shadow: 
-    0   0  10px #03186d,
-    0   0  15px #03186d,
-    0   0  25px #03186d,
-    0   0  50px #03186d;
-    transform: scale(1.1);
+
+nav ul li a:hover {
+    text-shadow:
+        0 0 5px var(--glow-color),
+        0 0 10px var(--glow-color),
+        0 0 20px var(--glow-color),
+        0 0 40px var(--glow-color);
 }
