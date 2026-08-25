@@ -20,6 +20,9 @@ header{
     border-radius: 5px;
     border: solid 1px rgb(55, 55, 241);
 }
+
+
+
 nav ul {
     display: flex;
     list-style: none;
