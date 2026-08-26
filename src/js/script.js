@@ -41,14 +41,27 @@ function salvarCalculo() {
 }
 
 function exibirResultado(d) {
-  const secao = document.querySelector('.Resultados');
-  secao.innerHTML = `
-    <h3>Previsão de resultados</h3>
-    <table>
-      <tr><th></th><th>Carro 1</th><th>Carro 2</th></tr>
-      <tr><td>Eficiência</td><td>${d.eficiencia1.toFixed(1)} km/kWh</td><td>${d.eficiencia2.toFixed(1)} km/kWh</td></tr>
-      <tr><td>Custo total</td><td>R$ ${d.custoTotal1.toFixed(2)}</td><td>R$ ${d.custoTotal2.toFixed(2)}</td></tr>
-      <tr><td>Classificação</td><td><strong>${d.resultado1}</strong></td><td><strong>${d.resultado2}</strong></td></tr>
-    </table>
+  const container = document.getElementById('resultados-cards');
+
+  const selo = (resultado) => {
+    if (resultado === 'Econômico') return 'selo-economico';
+    if (resultado === 'Não Econômico') return 'selo-nao-economico';
+    return 'selo-nao-compensa';
+  };
+
+  container.innerHTML = `
+    <div class="resultado-card">
+      <h4>Carro 1</h4>
+      <div class="resultado-linha"><span>Eficiência</span><span>${d.eficiencia1.toFixed(1)} km/kWh</span></div>
+      <div class="resultado-linha"><span>Custo total</span><span>R$ ${d.custoTotal1.toFixed(2)}</span></div>
+      <div class="resultado-selo ${selo(d.resultado1)}">${d.resultado1}</div>
+    </div>
+
+    <div class="resultado-card">
+      <h4>Carro 2</h4>
+      <div class="resultado-linha"><span>Eficiência</span><span>${d.eficiencia2.toFixed(1)} km/kWh</span></div>
+      <div class="resultado-linha"><span>Custo total</span><span>R$ ${d.custoTotal2.toFixed(2)}</span></div>
+      <div class="resultado-selo ${selo(d.resultado2)}">${d.resultado2}</div>
+    </div>
   `;
 }
