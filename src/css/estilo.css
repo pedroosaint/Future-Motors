@@ -10,6 +10,7 @@
 body {
     background-color: #d3d3d3;
     color: #FFFFFF;
+    min-height: 100vh;
 }
 
 header {
@@ -49,19 +50,27 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    text-shadow:
-        0 0 10px #03186d,
-        0 0 15px #03186d,
-        0 0 25px #03186d,
-        0 0 50px #03186d;
+    text-shadow: 0 0 10px #03186d, 0 0 15px #03186d, 0 0 25px #03186d, 0 0 50px #03186d;
+}
+
+main {
+    min-height: calc(100vh - 140px);
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+    align-items: start;
+    column-gap: 80px;
+    row-gap: 40px;
+    padding: 20px 40px 100px;
 }
 
 .boas-vindas {
+    grid-column: 1 / -1;
     width: 100%;
     text-align: center;
-    padding: 20px 20px 15px;
+    padding: 20px 20px 10px;
     position: relative;
-    margin-top: -95px;
+    margin-top: 0;
 }
 
 .boas-vindas::before,
@@ -91,7 +100,6 @@ nav ul li a:hover {
     max-width: 900px;
     margin: 0 auto;
     transition: transform 0.3s ease, text-shadow 0.3s ease;
-
     animation: subir 2s ease-in-out infinite;
 }
 
@@ -99,7 +107,6 @@ nav ul li a:hover {
     0%, 100% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-5px);
     }
@@ -121,19 +128,7 @@ nav ul li a:hover {
 
 #titulo:hover {
     color: #d3d3d3;
-    text-shadow:
-        0 0 5px rgba(37, 98, 126, 0.5),
-        0 0 12px rgba(37, 98, 126, 0.3);
-}
-
-main {
-    min-height: calc(100vh - 140px);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 80px;
-    padding: 20px 40px;
+    text-shadow: 0 0 5px rgba(37, 98, 126, 0.5), 0 0 12px rgba(37, 98, 126, 0.3);
 }
 
 .card {
@@ -145,7 +140,7 @@ main {
     padding: 18px;
     overflow: visible;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-top: -250px;
+    margin-top: 0;
 }
 
 #carro-2 {
@@ -196,7 +191,7 @@ main {
     border-radius: 20px;
     background-color: #d3d3d3;
     color: #0D1227;
-    text-align: center;
+    text-align: left;
     outline: none;
 }
 
@@ -239,34 +234,31 @@ main {
 
 .card:hover .farol {
     fill: #FFD84D;
-    filter:
-        drop-shadow(0 0 5px #FFD84D)
-        drop-shadow(0 0 12px #FFD84D)
-        drop-shadow(0 0 20px #FFD84D);
+    filter: drop-shadow(0 0 5px #FFD84D) drop-shadow(0 0 12px #FFD84D) drop-shadow(0 0 20px #FFD84D);
     transform: scale(1.15);
 }
 
 #simulador {
-  align-items: center;          /* centraliza horizontalmente */
-  text-align: center;
+    align-items: center;
+    text-align: center;
 }
 
 .calcular {
-  margin-top: 25px;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
+    margin-top: 25px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
-/*CSS PROVISÓRIO */
-
-.resultados {
+.Resultados {
+    grid-column: 1 / -1;
     width: 100%;
     text-align: center;
-    padding: 40px 20px 60px;
+    padding: 10px 20px 60px;
+    margin-top: 0;
 }
 
-.resultados h3 {
+#titulo-resultado {
     color: #0D1227;
     font-size: 27px;
     font-weight: bold;
@@ -275,9 +267,12 @@ main {
 }
 
 .resultados-cards {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: center;
+    align-items: stretch;
     gap: 30px;
 }
 
@@ -287,6 +282,7 @@ main {
     border-radius: 15px;
     padding: 20px 25px;
     width: 260px;
+    min-height: 170px;
     text-align: left;
     box-shadow: 0.5px 2px 8px 1px rgba(13, 13, 99, 0.4);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -310,6 +306,7 @@ main {
 .resultado-linha {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 17px;
     padding: 6px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -342,11 +339,6 @@ main {
 
 .selo-nao-compensa {
     background-color: #B22222;
-}
-
-#titulo-resultado {
-    margin-bottom: 20px;
-    color: black
 }
 
 footer {
