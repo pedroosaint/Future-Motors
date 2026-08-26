@@ -10,110 +10,111 @@
 
 <body>
 
-<header>
-    <img class="logo" src="src/assets/futurelogo.canva.png" alt="Logo Future Motors">
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </nav>
-</header>
+    <img src="src/assets/fundo.jpg" class="fundo" alt="">    
+    <header>
+        <img class="logo" src="src/assets/futurelogo.canva.png" alt="Logo Future Motors">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
+    <main>
 
-    <div class="boas-vindas">
-        <h2>
-            Bem-vindo à
-            <span id="titulo">Future Motors</span>
-            aqui você compara dois veículos elétricos e descobre qual tem o melhor desempenho.
-        </h2>
-    </div>
-
-    <article class="card" id="carro-1">
-
-        <div class="titulo">
-            CARRO 1
+        <div class="boas-vindas">
+            <h2>
+                Bem-vindo à
+                <span id="titulo">Future Motors</span>
+                aqui você compara dois veículos elétricos e descobre qual tem o melhor desempenho.
+            </h2>
         </div>
 
-        <div class="linha">
-            <span>AUTONOMIA (km/kWh)</span>
-            <input type="number" id="kmh-1" name="kmh-1" placeholder="Digite a velocidade">
-        </div>
+        <article class="card" id="carro-1">
 
-        <div class="linha">
-            <span>CONSUMO (kWh/100 km)</span>
-            <input type="number" id="consumo-1" name="consumo-1" step="0.1" placeholder="Digite o consumo">
-        </div>
+            <div class="titulo">
+                CARRO 1
+            </div>
 
-        <svg class="detalhes-carro" viewBox="0 0 300 140">
-            <circle class="farol" cx="65" cy="30" r="12"></circle>
-            <circle class="farol" cx="235" cy="30" r="12"></circle>
-            <circle class="roda" cx="65" cy="110" r="28"></circle>
-            <circle class="roda" cx="235" cy="110" r="28"></circle>
-        </svg>
-    
-    </article>
+            <div class="linha">
+                <span>AUTONOMIA (km/kWh)</span>
+                <input type="number" id="kmh-1" name="kmh-1" placeholder="Digite a velocidade">
+            </div>
 
-    <article class="card" id="carro-2">
+            <div class="linha">
+                <span>CONSUMO (kWh/100 km)</span>
+                <input type="number" id="consumo-1" name="consumo-1" step="0.1" placeholder="Digite o consumo">
+            </div>
+
+            <svg class="detalhes-carro" viewBox="0 0 300 140">
+                <circle class="farol" cx="65" cy="30" r="12"></circle>
+                <circle class="farol" cx="235" cy="30" r="12"></circle>
+                <circle class="roda" cx="65" cy="110" r="28"></circle>
+                <circle class="roda" cx="235" cy="110" r="28"></circle>
+            </svg>
         
-        <div class="titulo">
-            CARRO 2
-        </div>
+        </article>
+
+        <article class="card" id="carro-2">
+            
+            <div class="titulo">
+                CARRO 2
+            </div>
+            
+            <div class="linha">
+                <span>AUTONOMIA (km/kWh)</span>
+                <input type="number" id="kmh-2" name="kmh-2" placeholder="Digite a velocidade">
+            </div>
+
+            <div class="linha">
+                <span>CONSUMO (kWh/100 km)</span>
+                <input type="number" id="consumo-2" name="consumo-2" step="0.1" placeholder="Digite o consumo">
+            </div>
+
+            <svg class="detalhes-carro" viewBox="0 0 300 140">
+                <circle class="farol" cx="65" cy="30" r="12"></circle>
+                <circle class="farol" cx="235" cy="30" r="12"></circle>
+                <circle class="roda" cx="65" cy="110" r="28"></circle>
+                <circle class="roda" cx="235" cy="110" r="28"></circle>
+            </svg>
         
-        <div class="linha">
-            <span>AUTONOMIA (km/kWh)</span>
-            <input type="number" id="kmh-2" name="kmh-2" placeholder="Digite a velocidade">
-        </div>
+        </article>
 
-        <div class="linha">
-            <span>CONSUMO (kWh/100 km)</span>
-            <input type="number" id="consumo-2" name="consumo-2" step="0.1" placeholder="Digite o consumo">
-        </div>
+        <article class="card" id="simulador">
+            
+            <div class="titulo">
+                SIMULADOR
+            </div>
+            <div class="linha">
+                <span>DISTÂNCIA</span>
+                <input type="number" id="distância" name="distância" placeholder="Digite a distância do percurso">
+            </div>
 
-        <svg class="detalhes-carro" viewBox="0 0 300 140">
-            <circle class="farol" cx="65" cy="30" r="12"></circle>
-            <circle class="farol" cx="235" cy="30" r="12"></circle>
-            <circle class="roda" cx="65" cy="110" r="28"></circle>
-            <circle class="roda" cx="235" cy="110" r="28"></circle>
-        </svg>
-    
-    </article>
+            <div class="linha">
+                <span>PREÇO</span>
+                <input type="number" id="preço" name="preço" step="0.01" min="0" placeholder="Digite o valor da energia elétrica">
+            </div>
 
-    <article class="card" id="simulador">
+            <button onclick="salvarCalculo()" class="calcular">Calcular</button>
+
+        </article>
         
-        <div class="titulo">
-            SIMULADOR
-        </div>
-        <div class="linha">
-            <span>DISTÂNCIA</span>
-            <input type="number" id="distância" name="distância" placeholder="Digite a distância do percurso">
-        </div>
+        <section class="Resultados" id="resultados">
+            <h3 id="titulo-resultado">Previsão de resultados</h3>
+            <div class="resultados-cards" id="resultados-cards">
 
-        <div class="linha">
-            <span>PREÇO</span>
-            <input type="number" id="preço" name="preço" step="0.01" min="0" placeholder="Digite o valor da energia elétrica">
-        </div>
+            </div>
+        </section>
 
-        <button onclick="salvarCalculo()" class="calcular">Calcular</button>
+    </main>
 
-    </article>
-      
-    <section class="Resultados" id="resultados">
-        <h3 id="titulo-resultado">Previsão de resultados</h3>
-        <div class="resultados-cards" id="resultados-cards">
+    <footer>
+        <p>Todos os direitos reservados &copy; 2026</p>
+    </footer>
 
-        </div>
-    </section>
-
-</main>
-
-<footer>
-    <p>Todos os direitos reservados &copy; 2026</p>
-</footer>
-
-<script src="./src/js/script.js"></script>
+    <script src="./src/js/script.js"></script>
 
 </body>
 </html>
