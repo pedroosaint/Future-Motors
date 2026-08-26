@@ -1,40 +1,267 @@
 @import url('https://fonts.googleapis.com/css2?family=Judson&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'judson', serif;
+    font-family: 'Judson', serif;
 }
-body{
+
+body {
     background-color: #d3d3d3;
-    color: aliceblue;
+    color: #FFFFFF;
 }
-header{
+
+header {
     background: linear-gradient(90deg, #0D1227 30%, #25627E 73%);
+    height: 90px;
+    padding: 5px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:  20px;
     box-shadow: 0.5px 2px 5px 1px rgb(13, 13, 99);
     border-radius: 5px;
-    border: solid 1px rgb(103, 103, 214);
+    border: solid 1px rgb(55, 55, 241);
+    overflow: hidden;
 }
+
+header img {
+    width: 180px;
+    height: 85px;
+    object-fit: contain;
+    display: block;
+}
+
 nav ul {
     display: flex;
     list-style: none;
 }
-nav ul li{
-    padding:0 15px;
+
+nav ul li {
+    padding: 0 15px;
     font-size: 23px;
 }
-nav ul li a{
-    color: rgb(254, 253, 255);
+
+nav ul li a {
+    color: #FFFFFF;
     text-decoration: none;
+    transition: text-shadow 0.2s ease;
 }
-nav ul li a:hover{
-    text-shadow: 
-    0   0  5px  #16065e,
-    0   0  10px #16065e,
-    0   0  20px #16065e,
-    0   0  40px #16065e;
+
+nav ul li a:hover {
+    text-shadow:
+        0 0 10px #03186d,
+        0 0 15px #03186d,
+        0 0 25px #03186d,
+        0 0 50px #03186d;
+}
+
+.boas-vindas {
+    width: 100%;
+    text-align: center;
+    padding: 20px 20px 15px;
+    position: relative;
+}
+
+.boas-vindas::before,
+.boas-vindas::after {
+    content: "";
+    display: inline-block;
+    width: 70px;
+    height: 1px;
+    background-color: #25627E;
+    vertical-align: middle;
+    margin: 0 15px;
+    transition: width 0.3s ease;
+}
+
+.boas-vindas:hover::before,
+.boas-vindas:hover::after {
+    width: 100px;
+}
+
+.boas-vindas h2 {
+    font-family: 'Judson', serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    color: #0D1227;
+    max-width: 900px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+
+    animation: subir 2s ease-in-out infinite;
+}
+
+@keyframes subir {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.boas-vindas h2:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 3px 10px rgba(37, 98, 126, 0.25);
+}
+
+#titulo {
+    color: #25627E;
+    font-family: 'Judson', serif;
+    font-size: 31px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+#titulo:hover {
+    color: #d3d3d3;
+    text-shadow:
+        0 0 5px rgba(37, 98, 126, 0.5),
+        0 0 12px rgba(37, 98, 126, 0.3);
+}
+
+main {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    padding: 20px 40px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 320px;
+    background-color: #25627E;
+    border-radius: 15px;
+    padding: 18px;
+    overflow: visible;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: -250px;
+}
+
+#carro-2 {
+    background-color: #0D1227;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(13, 18, 39, 0.4);
+}
+
+.titulo {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 8px;
+    background-color: #d3d3d3;
+    color: #0D1227;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+#carro-2 .titulo {
+    color: #25627E;
+}
+
+.linha {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.linha span {
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.linha input {
+    width: 85%;
+    height: 30px;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 20px;
+    background-color: #d3d3d3;
+    color: #0D1227;
+    text-align: center;
+    outline: none;
+}
+
+.linha input::placeholder {
+    color: #0D1227;
+    opacity: 1;
+    text-align: left;
+}
+
+.linha input:focus {
+    box-shadow: 0 0 5px #FFFFFF;
+}
+
+.detalhes-carro {
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    width: 100%;
+    height: 125px;
+    overflow: visible;
+    padding: 0;
+}
+
+.roda {
+    fill: #0D1227;
+    stroke: #d3d3d3;
+    stroke-width: 5px;
+    transition: fill 0.2s ease, transform 0.2s ease;
+}
+
+#carro-2 .roda {
+    fill: #25627E;
+}
+
+.farol {
+    fill: #FFFFFF;
+    transition: fill 0.2s ease, filter 0.2s ease, transform 0.2s ease;
+    transform-origin: center;
+}
+
+.card:hover .farol {
+    fill: #FFD84D;
+    filter:
+        drop-shadow(0 0 5px #FFD84D)
+        drop-shadow(0 0 12px #FFD84D)
+        drop-shadow(0 0 20px #FFD84D);
+    transform: scale(1.15);
+}
+
+#simulador {
+  align-items: center;          /* centraliza horizontalmente */
+  text-align: center;
+}
+
+.calcular {
+  margin-top: 25px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+footer {
+    width: 100%;
+    padding: 15px;
+    background-color: #0D1227;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
 }
