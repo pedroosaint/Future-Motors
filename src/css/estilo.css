@@ -434,7 +434,7 @@ main {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
     font-size: 13px;
-    text-shadow: 0 0 3px #FFFFFF, 0 0 25px #25627E, 0 0 50px #25627E;
+    text-shadow: 0 0 1.5px #FFFFFF, 0 0 25px #25627E, 0 0 50px #25627E;
 }
 
 
