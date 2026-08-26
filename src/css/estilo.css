@@ -422,7 +422,7 @@ main {
 .footer-coluna h3 {
     margin-bottom: 15px;
     font-size: clamp(15px, 1.5vw, 18px);
-    text-shadow: 0 0 20px #FFFFFF, 0 0 50px #FFFFFF;
+    text-shadow: 0 0 2.3px #FFFFFF, 0 0 50px #FFFFFF;
 }
 
 .footer-coluna p {
